@@ -5,20 +5,23 @@
 call plug#begin()
 
 " Make sure you use single quotes
-
+Plug 'ryanoasis/vim-devicons'
 " ---
 Plug 'scrooloose/nerdtree'		" NERD Tree
 Plug 'Xuyuanp/nerdtree-git-plugin' 	" show git status in Nerd tree
 Plug 'itchyny/lightline.vim'		" UI
 Plug 'ap/vim-buftabline'		" buffers to tabline
-Plug 'tomasr/molokai'			" sublime theme
-Plug 'dracula/vim'
-Plug 'dunstontc/vim-vscode-theme' 	" vscode theme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'dracula/vim'
 Plug 'arzg/vim-colors-xcode'
 Plug 'jiangmiao/auto-pairs'
+Plug 'dense-analysis/ale'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sheerun/vim-polyglot'
+Plug 'vwxyutarooo/nerdtree-devicons-syntax'
+Plug 'ryanoasis/vim-webdevicons'
+
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Completion as in vscode
 
@@ -51,6 +54,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }} " Markd
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " }}}
+set encoding=UTF-8
 
 " Initialize plugin system
 call plug#end()
@@ -80,6 +84,7 @@ highlight Normal guibg=black guifg=white
 set background=dark
 
 colorscheme xcodedark
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 12
 
 " FZF {{{
 nnoremap <A-f> :Ag<CR>
@@ -305,13 +310,13 @@ function! s:check_back_space() abort
 endfunction
 let g:coc_snippet_next = '<tab>'
 " }}}
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
+"if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+" let g:coc_global_extensions += ['coc-prettier']
+"endif
 
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
+"if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+"  let g:coc_global_extensions += ['coc-eslint']
+"endif
 
 nnoremap <C-s> :w<CR>
 nnoremap <C-a> ggVG
