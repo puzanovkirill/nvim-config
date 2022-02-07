@@ -86,6 +86,10 @@ set background=dark
 colorscheme xcodedark
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 12
 
+set colorcolumn=80
+:highlight ColorColumn ctermbg=red guibg=tomato
+
+
 " FZF {{{
 nnoremap <A-f> :Ag<CR>
 nnoremap <C-p> :Files<CR>
